@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VirtualChoco</title>
+    <link rel="icon" href="Gambar/Icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chicle&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href=""><img src="Gambar/Title.png" alt="" /></a>
+        <div class="nav-links">
+          <a href="" target="_blank" class="navHover">Get Your Chocolate</a>
+          <a href="https://twitter.com/rrawr44" target="_blank" class="navHover">Follow Me</a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container-modal">
+      <!-- Modal Peringatan Nama Kosong -->
+      <div id="alertModal" class="modal pinkText">
+        <div class="modal-content">
+          <p>Please Input Your Name!</p>
+          <button onclick="tutupAlert()">Ok</button>
+        </div>
+      </div>
+
+      <!-- Modal Notifikasi Berhasil -->
+      <div id="notifModal" class="modal pinkText">
+        <div class="modal-content">
+          <p>Your Result Has Been Saved!</p>
+          <button onclick="tutupNotif()">Ok</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="nama popup">
+        <h1 class="pinkText">HELLO ! WELCOME TO VIRTUAL CHOCO</h1>
+        <h2 class="pinkText">PLEASE INPUT YOUR NAME !</h2>
+        <input type="text" id="nama" class="pinkText" placeholder="Your Name"/>
+        <button onclick="mulaiGacha()">Start</button>
+        <h4 class="pinkText" style="margin-top: 5px;">USE YOUR NICKNAME FOR A BETTER RESULT !</h4>
+      </div>
+
+      <div class="gacha popup" style="display: none">
+        <h2 id="greeting" class="pinkText"></h2>
+          <div class="slider">
+            <div class="list pinkText">
+              <div class="item">
+                <img src="Gambar/Coklat Kacang.png" />
+                <h2>Nut Chocolate</h2>
+              </div>
+              <div class="item">
+                <img src="Gambar/Coklat Keju.png" />
+                <h2>Cheese Chocolate</h2>
+              </div>
+              <div class="item">
+                <img src="Gambar/Coklat Marshmellow.png" />
+                <h2>Marshmellow Chocolate</h2>
+              </div>
+              <div class="item">
+                <img src="Gambar/Coklat Putih.png" />
+                <h2>White Chocolate</h2>
+              </div>
+              <div class="item">
+                <img src="Gambar/Coklat Strawberry.png" />
+                <h2>Strawberry Chocolate</h2>
+              </div>   
+            </div>
+            <div class="arrows">
+              <button id="prev">&lt;</button>
+              <button id="next">&gt;</button>
+            </div>
+          </div>
+        <button onclick="gachaCoklat()">Get Your Chocolate</button>
+      </div>
+
+      <div id="popup" class="modal pinkText">
+        <div class="modal-content" id="hasilGacha">
+        <h1 id="dear"></h1>
+        <h2>You Got A Valentine Chocolate !</h2>
+        <img id="coklatGacha" width="200" />
+        <h1 id="chocolateType"></h1>
+        <h3 id="message"></h3>
+
+        <!-- Tombol Tutup & Simpan -->
+        <button onclick="tutupModal()">Close Result</button>
+        <button onclick="simpanGambar()">Save Result</button>
+      </div>
+    </div>
+
+    <footer>
+      <div class="follow-me">
+        <h2>Follow me on</h2>
+        <a href="https://twitter.com/rrawr44" target="_blank">
+          <i class="fa-brands fa-x-twitter"></i>
+        </a>
+      </div>
+      <h3>This website powered by HTML, CSS, and Javascript</h3>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  </body>
+</html>

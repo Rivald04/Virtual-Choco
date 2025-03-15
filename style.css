@@ -1,0 +1,321 @@
+body {
+  font-family: "Chicle", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  background-image: url("Gambar/BGBody2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0px;
+  padding: 0px;
+}
+
+header {
+  width: 100%;
+  margin: auto;
+  align-items: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f16679;
+  padding: 5px 25px;
+}
+
+header nav img {
+  width: 80px;
+  height: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+header nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 0.1rem;
+}
+
+.navHover:hover {
+  color: #80380a;
+  background-color: #f9cdd3;
+  padding: 1px;
+  border-radius: 7px;
+}
+
+.container {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px);
+  width: 100%;
+}
+
+button {
+  color: #f16679;
+  background-color: #f9cdd3;
+  border-color: #f16679;
+  padding: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.nama,
+.gacha {
+  background-image: url("Gambar/BGContainer.jpg");
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin: -150px 0 0 0;
+}
+
+/* --- Styling untuk Modal Popup --- */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background-color: white;
+  background-image: url("Gambar/BGContainer.jpg");
+  background-size: cover;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+/* Tambahkan efek blur saat modal terbuka */
+.blur {
+  filter: blur(5px);
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* Styling untuk slider */
+.slider {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: auto;
+  position: relative;
+  border-radius: 10px;
+}
+
+.slider .list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Item yang sedang aktif */
+.slider .list .item.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.slider .list .item img {
+  width: 300px;
+  height: 300px;
+}
+
+.arrows {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  pointer-events: none;
+}
+
+.arrows button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: white;
+  box-shadow: 1px 1px 1px #f16679;
+  font-size: 18px;
+  font-weight: bold;
+  color: #f16679;
+  cursor: pointer;
+  transition: 0.3s;
+  pointer-events: auto;
+}
+
+.arrows button:hover {
+  background-color: #f16679;
+  color: #fff;
+}
+
+/* starting animation */
+.popup {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: popContainer 0.5s linear 1 forwards;
+}
+
+@keyframes popContainer {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slider.next .list .item.active {
+  animation: showPicture 0.5s ease-in-out forwards;
+}
+
+@keyframes showPicture {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+    filter: blur(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Animasi Prev */
+.slider.prev .list .item.active {
+  animation: prevPicture 0.5s ease-in-out forwards;
+}
+
+@keyframes prevPicture {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+    filter: blur(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.pinkText {
+  color: #f16679;
+  -webkit-text-stroke: 0.1px #f9cdd3;
+}
+
+.pinkText::placeholder {
+  color: #f16679;
+}
+
+/* Styling untuk footer */
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #f16679;
+  color: white;
+  padding: 15px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.follow-me {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.follow-me a {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.follow-me a i {
+  color: white; /* Warna default */
+  transition: color 0.3s ease-in-out; /* Efek transisi */
+}
+
+.follow-me a i:hover {
+  color: black; /* Warna berubah jadi hitam saat di-hover */
+}
+
+.twitter-icon {
+  width: 20px;
+  height: 20px;
+}
+
+@media screen and (max-width: 658px) {
+  .slider {
+    width: auto;
+    height: auto;
+  }
+
+  .slider .list .item img {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .slider {
+    width: auto;
+    height: auto;
+  }
+
+  .slider .list .item img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 267px) {
+  .slider {
+    width: auto;
+    height: auto;
+  }
+
+  .slider .list .item img {
+    width: 100px;
+    height: 100px;
+  }
+}
